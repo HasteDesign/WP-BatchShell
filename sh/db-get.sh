@@ -27,7 +27,7 @@ search_replace_https="wp search-replace https http"
 # ssh connect
 ssh $user@$server "$go_to_folder && $export_database"
 scp $user@$server:$path/db.sql db.sql
-# rsync $user@$server:onclick.dream.press/db/db.sql db.sql
+# rsync $user@$server:/var/www/wordpress/db/db.sql db.sql
 
 # local commands
 $import_local_database && $search_replace && $search_replace_https # && $change_user_password
