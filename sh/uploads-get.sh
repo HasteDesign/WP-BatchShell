@@ -16,4 +16,4 @@ remote_folder="set your server wordpress path here"
 local_folder="set your local folder to download"
 
 # ssh connect
-rsync -avz $user@$server:$remote_folder $local_folder
+rsync -avzh $user@$server:$remote_folder $local_folder --ignore-existing --progress
