@@ -2,7 +2,7 @@
 
 ##################################################################
 # Name:     uploads-get
-# Purpose:  Download uploads folder trough scp
+# Purpose:  Download uploads folder trough rsync
 # Author:   @allysonsouza
 # URL:      https://github.com/allysonsouza
 # Version:  0.0.1

@@ -10,11 +10,11 @@
 ##################################################################
 
 # variables
-server="insert here your hostname"
-user="insert here your username"
+server="myhostname.com"
+user="myusername"
 old_url="oldurl.com"
 new_url="newurl.com"
-path="set your server wordpress path here"
+path="/my/wordpress/path/on/server"
 
 # commands
 go_to_folder="cd $path"
@@ -26,8 +26,8 @@ search_replace_https="wp search-replace https http"
 
 # ssh connect
 ssh $user@$server "$go_to_folder && $export_database"
-scp $user@$server:$path/db.sql db.sql
-# rsync $user@$server:/var/www/wordpress/db/db.sql db.sql
+# scp $user@$server:$path/db.sql db.sql
+rsync -avzh $user@$server:"$path/db.sql" db.sql
 
 # local commands
 $import_local_database && $search_replace && $search_replace_https # && $change_user_password
