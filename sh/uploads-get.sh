@@ -10,10 +10,11 @@
 ##################################################################
 
 # variables
-server="insert here your hostname"
-user="insert here your username"
-remote_folder="set your server wordpress path here"
-local_folder="set your local folder to download"
+server="myhostname.com"
+user="myusername"
+remote_folder="/my/wordpress/path/on/server"
+local_folder="./"
+port=22
 
 # ssh connect
-rsync -avzh $user@$server:$remote_folder $local_folder --ignore-existing --progress
+rsync -avzh -e "ssh -p $port" $user@$server:"$remote_folder" "$local_folder" --ignore-existing --progress
